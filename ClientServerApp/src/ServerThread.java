@@ -4,13 +4,13 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ServerThread extends Thread {
     private Socket socket;
     private Statement statement;
     private ResultSet rS=null;
+    private SqlClass sql;
 
     public ServerThread(Socket socket, Statement statement) {
         this.socket = socket;
@@ -23,21 +23,19 @@ public class ServerThread extends Thread {
             String message;
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); //czytaj od klienta
             PrintWriter out= new PrintWriter(socket.getOutputStream(),true);//wyslij do klienta
+            sql=new SqlClass(statement); //class for sql select
+
             while (!(message = in.readLine()).equals("exit")) {
                 System.out.println(socket.getInetAddress() + " : " + message);
-                if(message.equals("k"))
-                {
-                    try {
-                        rS = statement.executeQuery("SELECT question from qa");
-                        rS.next();
-                        String m=rS.getString("question");
-                        System.out.println(m);
-                        out.println(m);
-                    }catch(SQLException e){
-                        System.out.println(e.getMessage());
-                    }
-                }else
-                    out.println("odpowiadam "+message);
+                String[] splited = message.split("\\s+"); //get operation type
+                System.out.println(splited[0]);
+
+                switch (splited[0]){
+                    case"login":
+                        out.println(sql.checkNiu(splited[1]));
+                        break;
+                }
+
             }
             socket.close();
         } catch (IOException e) {
@@ -46,4 +44,6 @@ public class ServerThread extends Thread {
             System.err.println(e);
         }
     }
+
+
 }
