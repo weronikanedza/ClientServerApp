@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ClientController  {
     private ClientSocket clientSocket=new ClientSocket();
-    private List<String> qalist;
+    private List<String> qalist,resultList;
     private String niuPerson;
     private String answers="answer";
 
@@ -183,10 +183,26 @@ public class ClientController  {
 
     public void lastScene(ActionEvent event){
         if( checkButtons(r10_1,r10_2,r10_3,r10_4).equals("0")) {
-            System.out.println(answers);
+            clientSocket.out.println(answers);
             question10.setVisible(false);
             currentpane = lastPane;
             lastPane.setVisible(true);
+            try {
+                String tab=clientSocket.responseServer.readLine();
+                resultList=Arrays.asList(tab.split(",")); //results list
+                clientSocket.out.println("intNumber"); //number of interviewers
+                String number=clientSocket.responseServer.readLine();
+
+                clientSocket.out.println("myAnswer"+","+niuPerson+"");
+                String myAnswers=clientSocket.responseServer.readLine();
+
+                System.out.println("TAB "+tab);
+                System.out.println("intNumber "+number);
+                System.out.println("myAnswer "+myAnswers);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }else{
             warningLabel10.setVisible(true);
         }

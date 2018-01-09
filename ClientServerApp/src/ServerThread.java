@@ -28,7 +28,6 @@ public class ServerThread extends Thread {
             while (!(message = in.readLine()).equals("exit")) {
                 System.out.println(socket.getInetAddress() + " : " + message);
                 String[] splited = message.split(","); //get operation type
-                System.out.println(splited[0]);
 
                 switch (splited[0]){
                     case "login":
@@ -37,6 +36,16 @@ public class ServerThread extends Thread {
                     case "qa":
                         out.println(sql.getQA());
                         break;
+                    case "answer":
+                        out.println(sql.answer(splited));
+                        break;
+                    case "intNumber":
+                        out.println(sql.checkNumber());
+                        break;
+                    case "myAnswer":
+                        out.println(sql.checkUserAnswers(splited[1]));
+                        break;
+                    default:break;
                 }
 
             }
