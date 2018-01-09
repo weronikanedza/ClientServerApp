@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientController">
    <children>
       <AnchorPane fx:id="firstpane" prefHeight="354.0" prefWidth="650.0">
@@ -411,17 +410,335 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="lastPane" layoutY="2.0" prefHeight="354.0" prefWidth="650.0" visible="false">
+      <AnchorPane fx:id="lastPane" layoutX="5.0" layoutY="6.0" prefHeight="354.0" prefWidth="650.0" visible="false">
          <children>
-            <Button fx:id="next41" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
-            <Label fx:id="q101" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+            <Button fx:id="end1" layoutX="157.0" layoutY="236.0" mnemonicParsing="false" onAction="#finish" prefHeight="26.0" prefWidth="130.0" text="Zakończ" />
+            <Label fx:id="q101" layoutX="22.0" layoutY="23.0" prefHeight="28.0" prefWidth="178.0" text="Twoje odpowiedzi :">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="19.0" />
                </font>
             </Label>
-            <Label fx:id="warningLabel101" layoutX="187.0" layoutY="267.0" prefHeight="18.0" prefWidth="226.0" text="Zaznacz co najmniej jedną odpowiedź" textFill="#c20f0f" visible="false">
+            <Label fx:id="userAnswers" layoutX="200.0" layoutY="24.0" prefHeight="18.0" prefWidth="442.0" text="Label">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="q1011" layoutX="22.0" layoutY="51.0" prefHeight="28.0" prefWidth="218.0" text="Liczba ankietowanych:">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="intNr" layoutX="231.0" layoutY="52.0" prefHeight="26.0" prefWidth="115.0" text="intNr">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="93.0" text="Pytanie">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="92.0" text="A">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="121.0" layoutY="92.0" text="B">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="156.0" layoutY="92.0" text="C">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="196.0" layoutY="92.0" text="D">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="113.0" text="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="135.0" text="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="155.0" text="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="177.0" text="4">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="200.0" text="5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a1_1" layoutX="83.0" layoutY="113.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a1_2" layoutX="120.0" layoutY="113.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a1_3" layoutX="156.0" layoutY="113.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a1_4" layoutX="198.0" layoutY="113.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a3_1" layoutX="83.0" layoutY="155.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a3_2" layoutX="120.0" layoutY="155.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a3_3" layoutX="156.0" layoutY="155.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a3_4" layoutX="198.0" layoutY="155.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a4_1" layoutX="83.0" layoutY="177.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a4_2" layoutX="120.0" layoutY="177.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a4_3" layoutX="156.0" layoutY="177.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a4_4" layoutX="198.0" layoutY="177.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a2_1" layoutX="83.0" layoutY="135.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a2_2" layoutX="120.0" layoutY="135.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a2_3" layoutX="156.0" layoutY="135.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a2_4" layoutX="198.0" layoutY="135.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a5_1" layoutX="83.0" layoutY="200.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a5_2" layoutX="120.0" layoutY="200.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a5_3" layoutX="156.0" layoutY="200.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a5_4" layoutX="198.0" layoutY="200.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="240.0" layoutY="93.0" text="Pytanie">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="300.0" layoutY="92.0" text="A">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="339.0" layoutY="92.0" text="B">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="374.0" layoutY="92.0" text="C">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="414.0" layoutY="92.0" text="D">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="258.0" layoutY="113.0" text="6">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="259.0" layoutY="135.0" text="7">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="259.0" layoutY="155.0" text="8">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="260.0" layoutY="177.0" text="9">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="260.0" layoutY="200.0" text="10">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a6_1" layoutX="301.0" layoutY="113.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a6_2" layoutX="338.0" layoutY="113.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a6_3" layoutX="374.0" layoutY="113.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a6_4" layoutX="416.0" layoutY="113.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a8_1" layoutX="301.0" layoutY="155.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a8_2" layoutX="338.0" layoutY="155.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a8_3" layoutX="374.0" layoutY="155.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a8_4" layoutX="416.0" layoutY="155.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a9_1" layoutX="301.0" layoutY="177.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a9_2" layoutX="338.0" layoutY="177.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a9_3" layoutX="374.0" layoutY="177.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a9_4" layoutX="416.0" layoutY="177.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a7_1" layoutX="301.0" layoutY="135.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a7_2" layoutX="338.0" layoutY="135.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a7_3" layoutX="374.0" layoutY="135.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a7_4" layoutX="416.0" layoutY="135.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a10_1" layoutX="301.0" layoutY="200.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a10_2" layoutX="338.0" layoutY="200.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a10_3" layoutX="374.0" layoutY="200.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="a10_4" layoutX="416.0" layoutY="200.0" text="120">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="finishSurvey" layoutX="10.0" layoutY="12.0" prefHeight="354.0" prefWidth="650.0" visible="false">
+         <children>
+            <Label fx:id="finlabel" layoutX="51.0" layoutY="113.0" prefHeight="47.0" prefWidth="524.0" text="Dziękuje za wypełnienie ankiety ; )">
+               <font>
+                  <Font size="32.0" />
                </font>
             </Label>
          </children>

@@ -11,7 +11,7 @@ public class Server {
             serverSocket = new ServerSocket(2000);
             while (true) {
                 Socket socket = serverSocket.accept(); //oczekiwanie na połączenie
-                new ServerThread(socket,database.getStatement()).start(); //kolejne watki dla klientow
+                new ServerThread(socket,database).start(); //kolejne watki dla klientow
             }
         } catch (Exception e) {
             System.err.println(e);
@@ -20,6 +20,7 @@ public class Server {
             if (serverSocket != null)
                 try {
                     database.closeConnection(); //zamkniecie bazy
+                    System.out.println("ZAMKNIETOBAZE");
                     serverSocket.close(); //zamkniecie gniazda
                 } catch (IOException e) {
                     e.printStackTrace();

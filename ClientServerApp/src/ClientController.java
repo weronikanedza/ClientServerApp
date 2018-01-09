@@ -1,6 +1,9 @@
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-
-import javafx.event.ActionEvent;;
+import javafx.scene.chart.*;
+import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -13,16 +16,24 @@ import java.util.List;
 public class ClientController  {
     private ClientSocket clientSocket=new ClientSocket();
     private List<String> qalist,resultList;
-    private String niuPerson;
+    private String niuPerson,tab;
+    @FXML
     private String answers="answer";
 
     @FXML private TextField niu;
     @FXML private Label niuLabel;
+    @FXML private Label intNr;
+    @FXML private Label userAnswers;
     @FXML private Label warningLabel1,warningLabel2,warningLabel3,warningLabel4,warningLabel5;
     @FXML private Label warningLabel6,warningLabel7,warningLabel8,warningLabel9,warningLabel10;
     @FXML private Label q1,q2,q3,q4,q5,q6,q7,q8,q9,q10;
+    @FXML private Label a1_1,a1_2,a1_3,a1_4,a2_1,a2_2,a2_3,a2_4,a3_1,a3_2,a3_3,a3_4;
+    @FXML private Label a4_1,a4_2,a4_3,a4_4,a5_1,a5_2,a5_3,a5_4,a6_1,a6_2,a6_3,a6_4;
+    @FXML private Label a7_1,a7_2,a7_3,a7_4,a8_1,a8_2,a8_3,a8_4,a9_1,a9_2,a9_3,a9_4;
+    @FXML private Label a10_1,a10_2,a10_3,a10_4;
 
     @FXML private AnchorPane firstpane;
+    @FXML private AnchorPane finishSurvey;
     @FXML private AnchorPane currentpane;
     @FXML private AnchorPane lastPane;
     @FXML private AnchorPane question1,question2,question3,question4,question5,question6,question7,question8,question9,question10;
@@ -48,9 +59,11 @@ public class ClientController  {
 
         if (niu.getText().matches("[0-9]+") ) { //check whata data contains (only numbers)
                 clientSocket.out.println("login,"+niu.getText()); //send to server operation + data
+                clientSocket.out.flush();
             try {
                 if(clientSocket.responseServer.readLine().equals("0")){ //niu accepted
                    clientSocket.out.println("qa");
+                   clientSocket.out.flush();
                     String qa=clientSocket.responseServer.readLine();
                     qalist = Arrays.asList(qa.split(","));
                     niuPerson=niu.getText();
@@ -183,29 +196,49 @@ public class ClientController  {
 
     public void lastScene(ActionEvent event){
         if( checkButtons(r10_1,r10_2,r10_3,r10_4).equals("0")) {
-            clientSocket.out.println(answers);
-            question10.setVisible(false);
-            currentpane = lastPane;
-            lastPane.setVisible(true);
+            clientSocket.out.println(answers); //send answers
+            clientSocket.out.flush();
+
             try {
-                String tab=clientSocket.responseServer.readLine();
+                tab=clientSocket.responseServer.readLine();
                 resultList=Arrays.asList(tab.split(",")); //results list
                 clientSocket.out.println("intNumber"); //number of interviewers
+                clientSocket.out.flush();
                 String number=clientSocket.responseServer.readLine();
+                intNr.setText(number);
 
                 clientSocket.out.println("myAnswer"+","+niuPerson+"");
+                clientSocket.out.flush();
                 String myAnswers=clientSocket.responseServer.readLine();
-
-                System.out.println("TAB "+tab);
-                System.out.println("intNumber "+number);
-                System.out.println("myAnswer "+myAnswers);
+                userAnswers.setText(myAnswers);
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            setAnswerLabels(a1_1,a1_2,a1_3,a1_4,1);
+            setAnswerLabels(a2_1,a2_2,a2_3,a2_4,6);
+            setAnswerLabels(a3_1,a3_2,a3_3,a3_4,11);
+            setAnswerLabels(a4_1,a4_2,a4_3,a4_4,16);
+            setAnswerLabels(a5_1,a5_2,a5_3,a5_4,21);
+            setAnswerLabels(a6_1,a6_2,a6_3,a6_4,26);
+            setAnswerLabels(a7_1,a7_2,a7_3,a7_4,31);
+            setAnswerLabels(a8_1,a8_2,a8_3,a8_4,36);
+            setAnswerLabels(a9_1,a9_2,a9_3,a9_4,41);
+            setAnswerLabels(a10_1,a10_2,a10_3,a10_4,46);
+            question10.setVisible(false);
+            currentpane = lastPane;
+            lastPane.setVisible(true);
         }else{
             warningLabel10.setVisible(true);
         }
+
+    }
+
+    public void setAnswerLabels(Label a,Label b,Label c,Label d,int i){
+        a.setText(resultList.get(i++));
+        b.setText(resultList.get(i++));
+        c.setText(resultList.get(i++));
+        d.setText(resultList.get(i++));
 
     }
     public String checkButtons(RadioButton r1,RadioButton r2,RadioButton r3,RadioButton r4){
@@ -239,6 +272,13 @@ public class ClientController  {
         r4.setText(qalist.get(listNumber++));
     }
 
-
+    public void finish(ActionEvent event){
+        clientSocket.out.println("exit");
+        clientSocket.out.flush();
+        clientSocket.disconnect();
+        lastPane.setVisible(false);
+        currentpane=finishSurvey;
+        finishSurvey.setVisible(true);
+    }
 
 }

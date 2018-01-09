@@ -23,7 +23,7 @@ public class Database {
 
             try{
                 statement.executeUpdate("USE baza");
-                System.out.println("Wybranie bazy");
+                System.out.println("Wybrano baze");
             }catch(SQLException e){
                 System.out.println("Utworzenie bazy");
                 createDB();
