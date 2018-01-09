@@ -12,7 +12,7 @@ public class ClientFX extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("ClientFX.fxml"));
         primaryStage.setTitle("Ankieta");
         primaryStage.setResizable(false);
-        primaryStage.setScene(new Scene(root, 500, 350));
+        primaryStage.setScene(new Scene(root, 600, 300));
         primaryStage.show();
     }
 

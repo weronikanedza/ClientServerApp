@@ -31,8 +31,11 @@ public class ServerThread extends Thread {
                 System.out.println(splited[0]);
 
                 switch (splited[0]){
-                    case"login":
+                    case "login":
                         out.println(sql.checkNiu(splited[1]));
+                        break;
+                    case "qa":
+                        out.println(sql.getQA());
                         break;
                 }
 

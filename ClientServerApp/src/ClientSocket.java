@@ -16,16 +16,9 @@ public class ClientSocket {
         try {
             socket=new Socket("localhost",2000);
             out = new PrintWriter(socket.getOutputStream(),true); //wyslij do serwera
-            in = new BufferedReader(new InputStreamReader(System.in)); //zczytaj
 
             responseServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-//            while (true) {
-//                String readInput = in.readLine();
-//                out.println(readInput);
-//                System.out.println("response "+ responseServer.readLine());
-//            }
 
-            //socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

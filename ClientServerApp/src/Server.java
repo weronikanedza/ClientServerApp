@@ -15,7 +15,7 @@ public class Server {
             }
         } catch (Exception e) {
             System.err.println(e);
-            System.out.println("exce");
+            System.out.println("exception");
         } finally {
             if (serverSocket != null)
                 try {
