@@ -27,7 +27,7 @@ public class ServerThread extends Thread {
 
             while (!(message = in.readLine()).equals("exit")) {
                 System.out.println(socket.getInetAddress() + " : " + message);
-                String[] splited = message.split("\\s+"); //get operation type
+                String[] splited = message.split(","); //get operation type
                 System.out.println(splited[0]);
 
                 switch (splited[0]){

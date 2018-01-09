@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientController">
    <children>
-      <AnchorPane fx:id="firstpane" prefHeight="300.0" prefWidth="600.0">
+      <AnchorPane fx:id="firstpane" prefHeight="354.0" prefWidth="650.0">
          <children>
             <Button fx:id="button1" layoutX="242.0" layoutY="188.0" mnemonicParsing="false" onAction="#logIn" prefHeight="26.0" prefWidth="115.0" text="OK" />
             <TextField fx:id="niu" layoutX="216.0" layoutY="147.0" onAction="#logIn" prefHeight="26.0" prefWidth="167.0">
@@ -24,22 +24,22 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Label fx:id="niuLabel" layoutX="232.0" layoutY="287.0" prefHeight="18.0" prefWidth="269.0" textFill="#f81414">
+            <Label fx:id="niuLabel" layoutX="187.0" layoutY="222.0" prefHeight="18.0" prefWidth="269.0" textFill="#f81414">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="question1" layoutY="4.0" prefHeight="300.0" prefWidth="600.0" visible="false">
+      <AnchorPane fx:id="question1" layoutX="5.0" layoutY="5.0" prefHeight="354.0" prefWidth="650.0" visible="false">
          <children>
-            <Button layoutX="224.0" layoutY="228.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="142.0" text="Dalej" />
+            <Button fx:id="next1" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#question2" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
             <Label fx:id="q1" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <RadioButton fx:id="r1_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton">
+            <RadioButton fx:id="r1_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="217.0" text="RadioButton">
                <font>
                   <Font size="14.0" />
                </font>
@@ -47,21 +47,383 @@
                   <ToggleGroup fx:id="group1" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="r1_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group1">
+            <RadioButton fx:id="r1_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="207.0" text="RadioButton" toggleGroup="$group1">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="r1_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group1">
+            <RadioButton fx:id="r1_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="197.0" text="RadioButton" toggleGroup="$group1">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="r1_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group1">
+            <RadioButton fx:id="r1_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="198.0" text="RadioButton" toggleGroup="$group1">
                <font>
                   <Font size="14.0" />
                </font>
             </RadioButton>
+            <Label fx:id="warningLabel1" layoutX="231.0" layoutY="269.0" prefHeight="18.0" prefWidth="115.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="question2" prefHeight="358.0" prefWidth="650.0" visible="false">
+         <children>
+            <Button fx:id="next2" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#question3" prefHeight="26.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q2" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="2.Pytanie">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="r2_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="207.0" text="RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="r2_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="207.0" text="RadioButton" toggleGroup="$group2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r2_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="190.0" text="RadioButton" toggleGroup="$group2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r2_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="178.0" text="RadioButton" toggleGroup="$group2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="warningLabel2" layoutX="237.0" layoutY="261.0" prefHeight="18.0" prefWidth="167.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="question3" prefHeight="354.0" prefWidth="650.0" visible="false">
+         <children>
+            <Button fx:id="next3" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#question4" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q3" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="r3_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group13" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="r3_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group13">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r3_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group13">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r3_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group13">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="warningLabel3" layoutX="235.0" layoutY="267.0" prefHeight="18.0" prefWidth="178.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="question4" prefHeight="358.0" prefWidth="650.0" visible="false">
+         <children>
+            <Button fx:id="next4" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#question5" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q4" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="r4_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group4" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="r4_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r4_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r4_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="warningLabel4" layoutX="235.0" layoutY="267.0" prefHeight="18.0" prefWidth="178.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="question5" prefHeight="358.0" prefWidth="650.0" visible="false">
+         <children>
+            <Button fx:id="next5" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#question6" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q5" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="r5_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group5" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="r5_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r5_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r5_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="warningLabel5" layoutX="235.0" layoutY="267.0" prefHeight="18.0" prefWidth="178.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="question6" prefHeight="358.0" prefWidth="650.0" visible="false">
+         <children>
+            <Button fx:id="next6" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#question7" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q6" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="r6_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group6" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="r6_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r6_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r6_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="warningLabel6" layoutX="235.0" layoutY="267.0" prefHeight="18.0" prefWidth="178.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="question7" prefHeight="354.0" prefWidth="650.0" visible="false">
+         <children>
+            <Button fx:id="next7" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#question8" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q7" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="r7_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group61" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="r7_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group61">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r7_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group61">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r7_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group61">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="warningLabel7" layoutX="235.0" layoutY="267.0" prefHeight="18.0" prefWidth="178.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="question8" prefHeight="354.0" prefWidth="650.0" visible="false">
+         <children>
+            <Button fx:id="next8" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#question9" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q8" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="r8_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group611" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="r8_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group611">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r8_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group611">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r8_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group611">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="warningLabel8" layoutX="235.0" layoutY="267.0" prefHeight="18.0" prefWidth="178.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="question9" prefHeight="364.0" prefWidth="660.0" visible="false">
+         <children>
+            <Button fx:id="next9" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#question10" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q9" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="r9_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group6111" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="r9_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group6111">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r9_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group6111">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r9_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group6111">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="warningLabel9" layoutX="235.0" layoutY="267.0" prefHeight="18.0" prefWidth="178.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="question10" prefHeight="364.0" prefWidth="660.0" visible="false">
+         <children>
+            <Button fx:id="next10" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" onAction="#lastScene" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q10" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="r10_1" layoutX="57.0" layoutY="91.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group61111" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="r10_2" layoutX="57.0" layoutY="126.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group61111">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r10_3" layoutX="57.0" layoutY="160.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group61111">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="r10_4" layoutX="57.0" layoutY="194.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="167.0" text="RadioButton" toggleGroup="$group61111">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="warningLabel10" layoutX="235.0" layoutY="267.0" prefHeight="18.0" prefWidth="178.0" text="Zaznacz odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="lastPane" layoutY="2.0" prefHeight="354.0" prefWidth="650.0" visible="false">
+         <children>
+            <Button fx:id="next41" layoutX="224.0" layoutY="228.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" text="Dalej" />
+            <Label fx:id="q101" layoutX="57.0" layoutY="43.0" prefHeight="34.0" prefWidth="486.0" text="6.Moje wynagrodzenie w stosunku do innych firm jest:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="warningLabel101" layoutX="187.0" layoutY="267.0" prefHeight="18.0" prefWidth="226.0" text="Zaznacz co najmniej jedną odpowiedź" textFill="#c20f0f" visible="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
